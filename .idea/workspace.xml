@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="377abc27-6812-44e2-9ef2-a3d08ed0ba3a" name="Default Changelist" comment="" />
+    <list default="true" id="377abc27-6812-44e2-9ef2-a3d08ed0ba3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mine/com/company/InputManger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mine/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mine/com/company/MainScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mine/com/company/board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mine/com/company/controll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mine/com/company/state.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/controll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/controll.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +25,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZbC8CNwST9ESc4Fe52xEu6qJEy" />
   <component name="ProjectViewState">
     <option name="flattenModules" value="true" />
@@ -22,6 +36,10 @@
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
@@ -29,53 +47,6 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="mineSweep" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="mineSweep" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,26 +79,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1011" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585104040305" />
+    <state x="909" y="298" key="CommitChangelistDialog2" timestamp="1585253261688">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="909" y="298" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1585253261688" />
     <state x="1109" y="615" width="366" height="171" key="Github.CreateGistDialog" timestamp="1585165536432">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1109" y="615" width="366" height="171" key="Github.CreateGistDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585165536432" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1585165701493">
+    <state width="1258" height="335" key="GridCell.Tab.0.bottom" timestamp="1585253261713">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585165701493" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1585165701493">
+    <state width="1258" height="335" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585253261713" />
+    <state width="1258" height="335" key="GridCell.Tab.0.center" timestamp="1585253261713">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585165701493" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1585165701493">
+    <state width="1258" height="335" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585253261713" />
+    <state width="1258" height="335" key="GridCell.Tab.0.left" timestamp="1585253261713">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585165701493" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1585165701493">
+    <state width="1258" height="335" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585253261713" />
+    <state width="1258" height="335" key="GridCell.Tab.0.right" timestamp="1585253261713">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585165701493" />
+    <state width="1258" height="335" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585253261713" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1585165701493">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -144,10 +119,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585165701493" />
-    <state x="976" y="528" key="com.intellij.ide.util.TipDialog" timestamp="1585147590112">
+    <state x="977" y="529" key="com.intellij.ide.util.TipDialog" timestamp="1585249360220">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="528" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585147590112" />
+    <state x="977" y="529" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585249360220" />
     <state x="937" y="331" key="run.anything.popup" timestamp="1585148642294">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

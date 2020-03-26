@@ -36,7 +36,7 @@ public class board {
     private void fillLabel(int x, int y) {
         for (int i = x - 1; i <= x + 1; i++) {
             for (int c = y - 1; c <= y + 1; c++) {
-                if (x == y) continue;
+                if (i == x && c == y) continue;
                 try {
                     if (mineLayer[i][c] == -1) continue;
                     mineLayer[i][c]++;
@@ -76,16 +76,18 @@ public class board {
             end = -1;//game over -> lost
             return;
         }
+
         if (mineLayer[x][y] == 0) {//expand
-            try{
-                for(int i=x-1;i<x+1;i++){
-                    for(int c=y-1;c<y+1;c++){
-                        if(mineLayer[i][c] == 0){
+            for (int i = x - 1; i <= x + 1; i++) {
+                for (int c = y - 1; c <= y + 1; c++) {
+                    try {
+                        if (mineLayer[i][c] == 0) {
                             topLayer[i][c] = state.opened;
                         }
+                    } catch (Exception e) {
                     }
                 }
-            }catch (Exception e){}
+            }
         }
         over();
     }

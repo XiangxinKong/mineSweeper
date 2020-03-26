@@ -7,6 +7,7 @@ public class controll {
 
     controll() {
         int size,mineNum;
+
         try {
             size = Integer.parseInt(JOptionPane.showInputDialog("size"));
             mineNum = Integer.parseInt(JOptionPane.showInputDialog("Number of mines"));
@@ -14,6 +15,7 @@ public class controll {
             size = 10;
             mineNum = 10;
         }
+
         gameBoard = new board(size, mineNum);
         new MainScreen(size, gameBoard);
 
