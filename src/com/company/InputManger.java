@@ -5,29 +5,41 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
+ * Input Manager take the user input and convert it to legal input
+ *
  * @author Xiangxin Kong
  * @version 1.0
  */
 public class InputManger implements MouseListener {
     board gameBoard;
     MainScreen screen;
+
+    /**
+     * @param gameBoard the main controll board of the game
+     * @param screen    the user interface of the game
+     */
     InputManger(board gameBoard, MainScreen screen) {
         this.gameBoard = gameBoard;
-        this.screen=screen;
+        this.screen = screen;
     }
 
+    /**
+     * take mouse click input and convert it to legal input.
+     *
+     * @param e
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         int x = e.getX() / 30 - 1;
         int y = e.getY() / 30 - 1;
-        if(x<0 ||y<0)return;
+        if (x < 0 || y < 0) return;
         if (MouseEvent.BUTTON1 == e.getButton()) {
-            gameBoard.check(x, y);
+            gameBoard.check(x, y);//left click
         } else if (MouseEvent.BUTTON3 == e.getButton()) {
-            gameBoard.marked(x, y);
+            gameBoard.marked(x, y);//right click
         }
-        screen.repaint();
-        screen.checkOver();
+        screen.repaint();//refresh the screen after clicking}
+        screen.checkOver();//
     }
 
     @Override

@@ -2,14 +2,26 @@ package com.company;
 
 import java.util.Arrays;
 
+/**
+ * logical interactions and state variables of the game
+ *
+ * @author Xiangxin Kong
+ * @version 1.0
+ */
 public class board {
 
     int size, mineNum;
     boolean initial = false;
-    public int end = 0;
+    public int end = 0;//0 for tie
     private static int mineLayer[][];
     private static state topLayer[][];
 
+    /**
+     * Initialize a new Game with size*size blocks and mineNum mines
+     *
+     * @param size
+     * @param mineNum
+     */
     board(int size, int mineNum) {
         this.size = size;
         this.mineNum = mineNum;
@@ -20,6 +32,13 @@ public class board {
         }
     }
 
+    /**
+     * Randomly fill mineNum mines, but avoid putting mines around (x,y)
+     *
+     * @param mineNum  number of desired mines
+     * @param initialX
+     * @param initialY
+     */
     public void fillMine(int mineNum, int initialX, int initialY) {
         int x, y, i = 0;
         while (i < mineNum) {
@@ -33,6 +52,12 @@ public class board {
         }
     }
 
+    /**
+     * label the (x,y) block with number of mines near (x,y)
+     *
+     * @param x
+     * @param y
+     */
     private void fillLabel(int x, int y) {
         for (int i = x - 1; i <= x + 1; i++) {
             for (int c = y - 1; c <= y + 1; c++) {
@@ -46,6 +71,9 @@ public class board {
         }
     }
 
+    /**
+     * check if the game is finished with "win" state, if so, end=-1
+     */
     private void over() {
         for (int i = 0; i < size; i++) {
             for (int c = 0; c < size; c++) {
@@ -57,6 +85,12 @@ public class board {
         end = 1;//game over-> win
     }
 
+    /**
+     * user plays mark for position x,y
+     *
+     * @param x
+     * @param y
+     */
     public void marked(int x, int y) {
         state temp = topLayer[x][y];
         if (temp == state.opened) {
@@ -66,6 +100,12 @@ public class board {
         over();
     }
 
+    /**
+     * user plays check for position x,y
+     *
+     * @param x
+     * @param y
+     */
     public void check(int x, int y) {
         if (!initial) {
             fillMine(mineNum, x, y);
@@ -77,7 +117,7 @@ public class board {
             return;
         }
 
-        if (mineLayer[x][y] == 0) {//expand
+        if (mineLayer[x][y] == 0) {//check the nearby block if it is empty
             for (int i = x - 1; i <= x + 1; i++) {
                 for (int c = y - 1; c <= y + 1; c++) {
                     try {
@@ -92,13 +132,25 @@ public class board {
         over();
     }
 
+    /**
+     * if (x,y) is coverd, opend or marked with red
+     *
+     * @param x
+     * @param y
+     * @return top
+     */
     public state getToplayer(int x, int y) {
         return topLayer[x][y];
     }
 
+    /**
+     * number of mines near (x,y). -1 for having ming on its own
+     *
+     * @param x
+     * @param y
+     * @return mineLayer's state at (x,y)
+     */
     public int getMineLayer(int x, int y) {
         return mineLayer[x][y];
     }
-
-    ;
 }
