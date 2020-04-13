@@ -20,11 +20,12 @@ public class MainScreen extends JPanel {
     /**
      * Initialize the interface with disired size and gameBoard
      */
-    public MainScreen(int size, board gameBoard) {
+    public MainScreen(int size, board gameBoard,String title) {
         this.gameBoard = gameBoard;
         window = new JFrame();
         window.add(this);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setTitle(title);
         this.size = size;
         window.setBounds(1000, 500, size * 30 + 90, size * 30 + 120);
         window.setBackground(new Color(155, 155, 155));

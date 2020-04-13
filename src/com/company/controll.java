@@ -1,5 +1,6 @@
 package com.company;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
  */
 public class controll extends JPanel implements ActionListener {
     ArrayList<JButton> level;
+    String[] buttonLabel;
     JFrame window;
 
     controll() {
@@ -32,9 +34,9 @@ public class controll extends JPanel implements ActionListener {
      */
     void setUpButtons() {
         level = new ArrayList<>();
-        String[] words = {"Beginner", "Easy", "Normal", "Hard", "Customized"};
+        buttonLabel = new String[]{"Beginner", "Easy", "Normal", "Hard", "Customized"};
         for (int i = 0; i < 5; i++) {
-            JButton temp = new JButton(words[i]);
+            JButton temp = new JButton(buttonLabel[i]);
             temp.setFont(new Font("serif", Font.BOLD, 18));
             temp.addActionListener(this);
             temp.setBounds(100, 80 + 60 * i, 180, 45);
@@ -77,7 +79,7 @@ public class controll extends JPanel implements ActionListener {
                     mineNum = 10;
                 }
         }
-        new MainScreen(size, new board(size, mineNum));
+        new MainScreen(size, new board(size, mineNum), buttonLabel[level.indexOf(e.getSource())]);
         window.dispose();
     }
 
