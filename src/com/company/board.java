@@ -13,14 +13,11 @@ public class board {
     int size, mineNum;
     boolean initial = false;
     public int end = 0;//0 for tie
-    private static int mineLayer[][];
-    private static state topLayer[][];
+    private static int[][] mineLayer;
+    private static state[][] topLayer;
 
     /**
      * Initialize a new Game with size*size blocks and mineNum mines
-     *
-     * @param size
-     * @param mineNum
      */
     board(int size, int mineNum) {
         this.size = size;
@@ -35,9 +32,7 @@ public class board {
     /**
      * Randomly fill mineNum mines, but avoid putting mines around (x,y)
      *
-     * @param mineNum  number of desired mines
-     * @param initialX
-     * @param initialY
+     * @param mineNum number of desired mines
      */
     public void fillMine(int mineNum, int initialX, int initialY) {
         int x, y, i = 0;
@@ -54,9 +49,6 @@ public class board {
 
     /**
      * label the (x,y) block with number of mines near (x,y)
-     *
-     * @param x
-     * @param y
      */
     private void fillLabel(int x, int y) {
         for (int i = x - 1; i <= x + 1; i++) {
@@ -65,7 +57,7 @@ public class board {
                 try {
                     if (mineLayer[i][c] == -1) continue;
                     mineLayer[i][c]++;
-                } catch (IndexOutOfBoundsException e) {
+                } catch (IndexOutOfBoundsException ignored) {
                 }
             }
         }
@@ -87,9 +79,6 @@ public class board {
 
     /**
      * user plays mark for position x,y
-     *
-     * @param x
-     * @param y
      */
     public void marked(int x, int y) {
         state temp = topLayer[x][y];
@@ -102,9 +91,6 @@ public class board {
 
     /**
      * user plays check for position x,y
-     *
-     * @param x
-     * @param y
      */
     public void check(int x, int y) {
         if (!initial) {
@@ -124,7 +110,7 @@ public class board {
                         if (mineLayer[i][c] == 0) {
                             topLayer[i][c] = state.opened;
                         }
-                    } catch (Exception e) {
+                    } catch (Exception ignored) {
                     }
                 }
             }
@@ -135,8 +121,6 @@ public class board {
     /**
      * if (x,y) is coverd, opend or marked with red
      *
-     * @param x
-     * @param y
      * @return top
      */
     public state getToplayer(int x, int y) {
@@ -146,8 +130,6 @@ public class board {
     /**
      * number of mines near (x,y). -1 for having ming on its own
      *
-     * @param x
-     * @param y
      * @return mineLayer's state at (x,y)
      */
     public int getMineLayer(int x, int y) {

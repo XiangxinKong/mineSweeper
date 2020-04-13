@@ -19,9 +19,6 @@ public class MainScreen extends JPanel {
 
     /**
      * Initialize the interface with disired size and gameBoard
-     *
-     * @param size
-     * @param gameBoard
      */
     public MainScreen(int size, board gameBoard) {
         this.gameBoard = gameBoard;
@@ -37,8 +34,6 @@ public class MainScreen extends JPanel {
 
     /**
      * paint the grid, block of the interface
-     *
-     * @param g
      */
     public void paintComponent(Graphics g) {
         g.setFont(new Font("serif", Font.BOLD, 18));
@@ -55,9 +50,6 @@ public class MainScreen extends JPanel {
 
     /**
      * set the theme color of each block base on state
-     *
-     * @param x
-     * @return
      */
     private Color getColor(state x) {
         if (x == state.covered) return new Color(78, 78, 78);
@@ -67,10 +59,6 @@ public class MainScreen extends JPanel {
 
     /**
      * paint the text(number of nearby mines) in the block
-     *
-     * @param g
-     * @param x
-     * @param y
      */
     private void paintLabel(Graphics g, int x, int y) {
         int mineNum = gameBoard.getMineLayer(x, y);

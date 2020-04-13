@@ -1,6 +1,10 @@
 package com.company;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  * get size and mine numbers from user and start the game
@@ -8,22 +12,75 @@ import javax.swing.*;
  * @author Xiangxin Kong
  * @version 1.0
  */
-public class controll {
-    board gameBoard;
+public class controll extends JPanel implements ActionListener {
+    ArrayList<JButton> level;
+    JFrame window;
 
     controll() {
-        int size, mineNum;
+        window = new JFrame();
+        window.add(this);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setBounds(1500, 1000, 400, 500);
+        window.setBackground(new Color(200, 200, 200));
+        window.setVisible(true);
+        setLayout(null);
+        setUpButtons();
+    }
 
-        try {
-            size = Integer.parseInt(JOptionPane.showInputDialog("size"));
-            mineNum = Integer.parseInt(JOptionPane.showInputDialog("Number of mines"));
-        } catch (Exception e) {
-            size = 10;
-            mineNum = 10;
+    /*
+     *place 5 buttons on the panel
+     */
+    void setUpButtons() {
+        level = new ArrayList<>();
+        String[] words = {"Beginner", "Easy", "Normal", "Hard", "Customized"};
+        for (int i = 0; i < 5; i++) {
+            JButton temp = new JButton(words[i]);
+            temp.setFont(new Font("serif", Font.BOLD, 18));
+            temp.addActionListener(this);
+            temp.setBounds(100, 80 + 60 * i, 180, 45);
+            add(temp);
+            level.add(temp);
         }
-        gameBoard = new board(size, mineNum);
-        new MainScreen(size, gameBoard);
 
     }
+
+    /*
+     *this method is invoked by clicking button
+     *invoke the gameboard with disired difficulties
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int size, mineNum;
+        switch (level.indexOf(e.getSource())) {
+            case 0:
+                size = 10;
+                mineNum = 10;
+                break;
+            case 1:
+                size = 10;
+                mineNum = 20;
+                break;
+            case 2:
+                size = 15;
+                mineNum = 25;
+                break;
+            case 3:
+                size = 20;
+                mineNum = 60;
+                break;
+            default:
+                try {
+                    size = Integer.parseInt(JOptionPane.showInputDialog("size"));
+                    mineNum = Integer.parseInt(JOptionPane.showInputDialog("Number of mines"));
+                } catch (Exception e1) {
+                    size = 10;
+                    mineNum = 10;
+                }
+        }
+        new MainScreen(size, new board(size, mineNum));
+        window.dispose();
+    }
+
+
 }
 

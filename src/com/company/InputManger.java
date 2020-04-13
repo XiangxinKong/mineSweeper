@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -10,7 +12,7 @@ import java.awt.event.MouseListener;
  * @author Xiangxin Kong
  * @version 1.0
  */
-public class InputManger implements MouseListener {
+public class InputManger implements MouseListener, KeyListener {
     board gameBoard;
     MainScreen screen;
 
@@ -25,8 +27,6 @@ public class InputManger implements MouseListener {
 
     /**
      * take mouse click input and convert it to legal input.
-     *
-     * @param e
      */
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -59,6 +59,21 @@ public class InputManger implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
 
     }
 }
