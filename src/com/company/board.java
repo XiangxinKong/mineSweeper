@@ -1,5 +1,7 @@
 package com.company;
 
+import sound.soundManger;
+
 import java.util.Arrays;
 
 /**
@@ -86,6 +88,7 @@ public class board {
             return;
         }
         topLayer[x][y] = (temp == state.marked ? state.covered : state.marked);
+        new soundManger("soundfile\\click_x.wav");
         over();
     }
 
@@ -97,7 +100,11 @@ public class board {
             fillMine(mineNum, x, y);
             initial = true;
         }
+
+        if (topLayer[x][y] == state.opened) return;
         topLayer[x][y] = state.opened;
+        new soundManger("soundfile\\mapcollision.wav");
+
         if (mineLayer[x][y] == -1) {
             end = -1;//game over -> lost
             return;
@@ -134,5 +141,20 @@ public class board {
      */
     public int getMineLayer(int x, int y) {
         return mineLayer[x][y];
+    }
+
+    /**
+     * number of marked grid
+     */
+    public int markedNum() {
+        int markedNum = 0;
+        for (int i = 0; i < size; i++) {
+            for (int c = 0; c < size; c++) {
+                if (topLayer[i][c] == state.marked) {
+                    markedNum++;
+                }
+            }
+        }
+        return markedNum;
     }
 }

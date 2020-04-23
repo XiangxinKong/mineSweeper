@@ -1,6 +1,8 @@
 package com.company;
 
 
+import sound.soundManger;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -31,7 +33,7 @@ public class InputManger implements MouseListener, KeyListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         int x = e.getX() / 30 - 1;
-        int y = e.getY() / 30 - 1;
+        int y = e.getY() / 30 - 2;
         if (x < 0 || y < 0) return;
         if (MouseEvent.BUTTON1 == e.getButton()) {
             gameBoard.check(x, y);//left click
