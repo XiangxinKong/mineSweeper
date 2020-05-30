@@ -1,4 +1,4 @@
-# mineSweeper
+# mineSweeper 扫雷
 mineSweeper in swing. swing框架做的扫雷小游戏，可自定义难度和尺寸。
 
 easy: 10x10 with 20 mines
