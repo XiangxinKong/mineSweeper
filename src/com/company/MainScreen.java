@@ -17,7 +17,8 @@ import sound.soundManger;
  * @version 1.0
  */
 public class MainScreen extends JPanel implements ActionListener {
-    int size, timer = 0, leftBound = 30, upBound = 60;
+    int size, timer = 0;
+    final int leftBound = 30, upBound = 60;
     board gameBoard;
     JFrame window;
     Timer timerThread;
@@ -57,13 +58,16 @@ public class MainScreen extends JPanel implements ActionListener {
         updateTime(g);
     }
 
+    /**
+     * update time since start and number of mines left
+     */
     private void updateTime(Graphics g) {
         g.setColor(new Color(155, 155, 155, 255));
         g.fillRect(0, 0, (size + 2) * 30, 60);
         g.setColor(new Color(255, 255, 255));
         g.setFont(new Font("serif", Font.BOLD, 24));
-        g.drawString("Time: " + timer, 33, 40);
-        g.drawString("Mines Left: " + (gameBoard.mineNum - gameBoard.markedNum()), (size - 4) * 30, 40);
+        g.drawString("Time: " + timer, 33, 40);//paint time
+        g.drawString("Mines Left: " + (gameBoard.mineNum - gameBoard.markedNum()), (size - 4) * 30, 40);//paint mine numbers
     }
 
     /**
@@ -89,18 +93,21 @@ public class MainScreen extends JPanel implements ActionListener {
      * if the game is over, show message and exit with info
      */
     public void checkOver() {
-        if (gameBoard.end == 0) return;
+        if (gameBoard.end == 0) return;//not finished yet
         timerThread.stop();
-        if (gameBoard.end == 1) {
+        if (gameBoard.end == 1) {//win
             new soundManger("soundfile\\cheering.wav");
             JOptionPane.showMessageDialog(this, "Congradualation!\n It took you " + timer + " s");
-        } else if (gameBoard.end == -1) {
+        } else if (gameBoard.end == -1) {//lost
             new soundManger("soundfile\\Explosion.wav");
             JOptionPane.showMessageDialog(this, "You lost");
         }
         System.exit(0);
     }
 
+    /**
+     * increase timer and update the time, called by timerthread 1/s
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         timer++;

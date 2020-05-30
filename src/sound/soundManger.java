@@ -11,20 +11,20 @@ import javax.sound.sampled.LineUnavailableException;
 /**
  * play the sound effect
  */
-public class soundManger extends Thread {
-    /////
-    private File soundFile;
-    private AudioInputStream audioStream;
+    public class soundManger extends Thread {
+        /////
+        private File soundFile;
+        private AudioInputStream audioStream;
 
 
-    public soundManger(String soundFilePath) {
-        try {
-            soundFile = new File(soundFilePath);
-            audioStream = AudioSystem.getAudioInputStream(soundFile);
-        } catch (Exception e) {
+        public soundManger(String soundFilePath) {
+            try {
+                soundFile = new File(soundFilePath);
+                audioStream = AudioSystem.getAudioInputStream(soundFile);
+            } catch (Exception e) {
+            }
+            run();
         }
-        run();
-    }
 
     protected void play() throws LineUnavailableException, IOException {
         Clip clip = AudioSystem.getClip();
