@@ -22,7 +22,7 @@ public class controll extends JPanel implements ActionListener {
         window = new JFrame();
         window.add(this);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setBounds(1500, 1000, 400, 500);
+        window.setBounds(100, 100, 400, 500);
         setBackground(new Color(189, 197, 200));
         window.setVisible(true);
         setLayout(null);

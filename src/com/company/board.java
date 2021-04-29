@@ -2,7 +2,10 @@ package com.company;
 
 import sound.soundManger;
 
-import java.util.Arrays;
+import java.util.*;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 
 /**
  * logical interactions and state variables of the game
@@ -111,18 +114,28 @@ public class board {
         }
 
         if (mineLayer[x][y] == 0) {//check the nearby block if it is empty
-            for (int i = x - 1; i <= x + 1; i++) {
-                for (int c = y - 1; c <= y + 1; c++) {
-                    try {
-                        if (mineLayer[i][c] == 0) {
-                            topLayer[i][c] = state.opened;
-                        }
-                    } catch (Exception ignored) {
-                    }
+            Set<Integer> s = new HashSet<Integer>();
+            progate(x, y, s);
+            s.clear();
+        }
+
+        over();
+    }
+
+    /**
+     * expand the empty blocks
+     */
+    public void progate(int x, int y, Set<Integer> s) {
+        if (x <= 0 || y <= 0 || x > size || y >= size) return;
+        s.add(x * 100 + y);
+        for (int i = max(x - 1, 0); i <= min(x + 1, size - 1); i++) {
+            for (int c = max(y - 1, 0); c <= min(y + 1, size - 1); c++) {
+                if (mineLayer[i][c] == 0 && !s.contains(i * 100 + c)) {
+                    progate(i, c, s);
                 }
+                topLayer[i][c] = state.opened;
             }
         }
-        over();
     }
 
     /**

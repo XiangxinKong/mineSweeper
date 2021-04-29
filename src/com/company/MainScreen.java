@@ -33,7 +33,7 @@ public class MainScreen extends JPanel implements ActionListener {
         window.add(this);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setTitle(title);
-        window.setBounds(1000, 500, size * 30 + 90, size * 30 + 150);
+        window.setBounds(500, 500, size * 30 + 90, size * 30 + 150);
         window.setBackground(new Color(155, 155, 155));
         window.setVisible(true);
         addMouseListener(new InputManger(gameBoard, this));
